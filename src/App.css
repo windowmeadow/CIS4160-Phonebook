@@ -16,6 +16,10 @@ SO I NEED TO DO:
 - add title/name/number/email - DONE
 - add more color - Need to work on this
 - focus styles (copy the current things and also highlight buttons and lighten button when hovered - DONE theres not too many buttons anyway
+ADD IMAGES FOR PROFILES - MUST
+CHANGE OFF OF <LI> and MAKE IT SOMETHING ELSE - NEED TO
+PUT CONTACTS DIRECTLY INTO JSX? NO, put them into JSON
+- need to add a section for photo
 */
 
 .playlist_img {
@@ -80,12 +84,27 @@ SO I NEED TO DO:
     font-weight: 650;
     transition: box-shadow 120ms ease, transform 80ms ease, background 120ms ease;
     margin-top: 8px;
+    margin-left: 10px;
 }
-
+.bigbtn{
+    color: #000;
+    height: 52px;
+    font-weight: 650;
+    min-height: 52px;
+    padding: 0 1.2rem;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    width:100%;
+    background: #39d353;
+    border-radius: 0rem;
+}
+.page-view__nav-btn:hover,
+.bigbtn:hover,
 .btn:hover {
     background: #19832b; 
 }
-
+.page-view__nav-btn:focus,
+.page-view__nav-btn:focus-visible,
 .btn:focus,
 .btn:focus-visible {
     outline: 2px solid #dcdddc;
@@ -139,7 +158,7 @@ SO I NEED TO DO:
 
 .contacts__header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
     gap: 1rem;
     align-items: center;
     padding: 0.5rem 0;
@@ -152,6 +171,7 @@ SO I NEED TO DO:
 
 
 .contacts__grid {
+    
     list-style: none;
     padding: 0;
     margin: 0;
@@ -221,7 +241,6 @@ select {
     color: inherit;
 }
 
-/* make controls fill their grid cell and allow shrinking */
 .field input,
 .field select,
 .field textarea {
@@ -293,3 +312,125 @@ select {
     box-sizing: border-box;
     border-radius: 8px;
 }
+
+/*START new Buttons CSS*/
+
+
+.contact-card__photo{
+    width: 128px;
+    height: 128px;
+    border-radius: 20%;
+    object-fit: cover;
+    display: inline-flex;
+}
+
+.contact-card__info{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* full-screen overlay that takes over the page */
+.page-view {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    background: rgba(40, 40, 40, 0.98);
+    color: #fff;
+    overflow: auto;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/* close button */
+.page-view__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.page-view__nav {
+    margin-top: auto;             /* takes remaining space so nav sits at the bottom */
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 0.5rem;
+    position: relative;
+    z-index: 5;
+}
+
+.page-view__nav-btn {
+    background: linear-gradient(180deg, #53e06b 0%, #39d353 100%);
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;       
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 10px 24px rgba(57,211,83,0.18);
+    transition: transform 120ms ease, filter 120ms ease;
+}
+
+
+.page-view__counter {
+    color: #000000;
+    font-weight: 600;
+    text-align: center;
+    min-width: 60px;
+    min-height: 60px;
+    background-color: white;
+    box-shadow: 2px 2px 2px rgba(32, 139, 69, 0.45);
+    border: 1px ridge #000000;
+    border-radius:50%;
+    line-height: 60px
+}
+
+.page-view__photo {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px ridge #39d353;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+/* single contact card fills available viewport height */
+.page-view__card.single {
+    display: flex;
+    flex-direction: column;       
+    gap: 1.5rem;
+    align-items: center;
+    width: max(120px, 120px);
+    padding: 2rem;
+    border-radius: 12px;
+    background: rgba(221, 18, 18, 0.03);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    min-height: calc(60vh);
+    position: relative;
+}
+
+.page-view__card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 2rem;
+    min-height: calc(100vh - 4rem); /* full visible page per card */
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+}
+
+
+/* end new Buttons CSS */
