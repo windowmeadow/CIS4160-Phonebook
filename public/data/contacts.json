@@ -1,32 +1,73 @@
 [
     {
-        "id": 101,
-        "name": "Ada Lovelace",
-        "phone": "(555) 010-0101",
-        "email": "ada@example.com"
+        "id": 1,
+        "name": "Grant Perez",
+        "phone": "(858)703-5248",
+        "email": "grentperez@music.com",
+        "photo": "grentperez.png"
     },
     {
-        "id": 102,
-        "name": "Alan Turing",
-        "phone": "(555) 010-0102",
-        "email": "alan@example.com"
+        "id": 2,
+        "name": "Laufey Lín Bing Jónsdóttir",
+        "phone": "(000)423-1999",
+        "email": "laufey@music.com",
+        "photo": "Laufey.png"
     },
     {
-        "id": 103,
-        "name": "Grace Hopper",
-        "phone": "(555) 010-0103",
-        "email": "grace@example.com"
+        "id": 3,
+        "name": "Cameron Lew",
+        "phone": "(001)126-1995",
+        "email": "gingerroot@music.com",
+        "photo": "gingerroot.jpg"
     },
     {
-        "id": 104,
-        "name": "Katherine Johnson",
-        "phone": "(555) 010-0104",
-        "email": "katherine@example.com"
+        "id": 4,
+        "name": "María Zardoya",
+        "phone": "(001) 121-1994",
+        "email": "themarias@music.com",
+        "photo": "Maria.png"
     },
     {
-        "id": 105,
-        "name": "Donald Knuth",
+        "id": 5,
+        "name": "Marco Rivero Ochoa",
         "phone": "(555) 010-0105",
-        "email": "donald@example.com"
+        "email": "mustardservice@music.com",
+        "photo": "mustardservice.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Pierro Piccioni",
+        "phone": "(001) 216-1921",
+        "email": "pierropiccioni@music.com",
+        "photo": "pierropiccioni.webp"
+    },
+    {
+        "id": 7,
+        "name": "Woodrow Yeakel",
+        "phone": "(000) 814-2017",
+        "email": "citygirlmusictime@music.com",
+        "photo": "citygirl.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Steven Fitzpatrick",
+        "phone": "(000) 407-2016",
+        "email": "hers@music.com",
+        "photo": "StevenFitzpatrick.png"
+    },
+    {
+        "id": 9,
+        "name": "Audun Laading",
+        "phone": "(000) 824-2018",
+        "email": "hers@music.com",
+        "photo": "AuudunLaading.png"
+    },
+    {
+        "id": 10,
+        "name": "Julia Bozzo",
+        "phone": "(000) 510-2020",
+        "email": "planttvibes@music.com",
+        "photo": "planttvibes.jpg"
     }
+
 ]

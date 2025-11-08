@@ -1,23 +1,61 @@
 .page {
-    max-width: 1100px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 2rem 1rem 4rem;
+    background-color: black;
+    min-height: 100vh;
+}
+/* WHAT THEME DO I WANT? - FIRST
+USE CSS for colors, fonts, images
+- what images do I need/want?
+check the spacing
+focus styles for interactive elements (button, select, input)
+
+SO I NEED TO DO:
+- put list into columns and even spacing - DONE
+- add title/name/number/email - DONE
+- add more color - Need to work on this
+- focus styles (copy the current things and also highlight buttons and lighten button when hovered - DONE theres not too many buttons anyway
+ADD IMAGES FOR PROFILES - MUST
+CHANGE OFF OF <LI> and MAKE IT SOMETHING ELSE - NEED TO
+PUT CONTACTS DIRECTLY INTO JSX? NO, put them into JSON
+- need to add a section for photo
+*/
+
+.playlist_img {
+    display: flex;
+    align-items: flex-end; 
+    margin-top: none;
+    border-radius: 12px;
+    margin-bottom: 0rem;
+    margin-right: 20px;
+    box-shadow: inset 0 0 165px rgba(149, 200, 216, 0.574);
+
 }
 
+
+.imageflexcontent {
+    margin-left: 5px;
+    margin-right: 20px;
+    margin-top: 20px;
+    box-shadow: inset 5px 5px 10px 2px rgb(73, 145, 155);
+}
 .page__header {
-    display: grid;
-    gap: 0.5rem;
+    display: block; 
     margin-bottom: 1.5rem;
     text-align: left;
+;
 }
 
 .page__title {
-    margin: 0;
-    font-size: 2rem;
+    margin: 1px;
+    font-size: 2.5rem;
+;
 }
 
 .page__subtitle {
-    margin: 0;
+    margin: 2px;
+    margin-bottom: 0px;
     color: #888;
 }
 
@@ -32,9 +70,45 @@
     border-radius: 8px;
     border: 1px solid #3a3a3a;
     padding: 0.5rem 0.9rem;
-    background: #1a1a1a;
-    color: inherit;
+    background: #39d353; 
+    color: #000;
     cursor: pointer;
+    height: 44px;
+    min-height: 44px;
+    padding: 0 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: right;
+    font-size: 1rem;
+    box-sizing: border-box;
+    font-weight: 650;
+    transition: box-shadow 120ms ease, transform 80ms ease, background 120ms ease;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+.bigbtn{
+    color: #000;
+    height: 52px;
+    font-weight: 650;
+    min-height: 52px;
+    padding: 0 1.2rem;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    width:100%;
+    background: #39d353;
+    border-radius: 0rem;
+}
+.page-view__nav-btn:hover,
+.bigbtn:hover,
+.btn:hover {
+    background: #19832b; 
+}
+.page-view__nav-btn:focus,
+.page-view__nav-btn:focus-visible,
+.btn:focus,
+.btn:focus-visible {
+    outline: 2px solid #dcdddc;
+    transform: translateY(-1px);
 }
 
 .theme {
@@ -45,33 +119,71 @@
 }
 
 .search {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #333;
+    margin-top: 1.5rem;
+    padding-top: 0rem;
+    border-top: 0.75px solid #656565;
+    color: black;
 }
 
 .search__controls {
-    display: grid;
-    grid-template-columns: minmax(140px, 1fr) 1fr minmax(120px, 1fr) 1fr;
-    gap: 0.5rem 1rem;
+    display: inline-flex;
+    gap: 1rem 1rem;
+    align-items: right;
+    color: white;
+
+    margin-left: 20px;
+}
+
+#search-heading {
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.9rem;
+    background: #39d353; 
+    color: #000;         
+    border: none;
+    border-radius: 999px; 
+    font-weight: 650;
+    line-height: 1;
 }
 
 .search__results {
     color: #888;
+    margin-bottom: 0rem;
 }
 
 .contacts {
     margin-top: 1.5rem;
 }
 
+.contacts__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    gap: 1rem;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.473);
+    font-style: italic;
+    border-bottom: 0.75px solid #656565;
+}
+
+
 .contacts__grid {
+    
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1rem;
+}
+
+.contacts__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .contact-card {
@@ -81,16 +193,26 @@
     background: #111;
 }
 
-.contact-card__name {
-    margin: 0 0 0.25rem 0;
-    font-size: 1.1rem;
+
+.contact-row {
+    display: grid;
+    grid-template-columns: 48px 1fr 1fr 1fr;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
-.contact-card__email,
-.contact-card__phone {
-    margin: 0.1rem 0;
-    color: #aaa;
+.contact-id {
+    font-weight: 700;
+    color: #bbb;
+    text-align: center;
 }
+
+.contact-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.contact-phone { color: #aaa; }
+.contact-email { color: #888; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
 
 .form {
     margin-top: 2rem;
@@ -101,7 +223,7 @@
 .form__body {
     display: grid;
     gap: 0.75rem 1rem;
-    grid-template-columns: 1fr 1fr 160px auto;
+    grid-template-columns: 1fr 1fr 240px auto; /* wider email column */
     align-items: end;
 }
 
@@ -119,15 +241,33 @@ select {
     color: inherit;
 }
 
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    min-width: 0;
+}
+
 .form__actions {
-    display: flex;
+    margin-left: 0;
     gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-self: start; 
 }
 
 .page__footer {
     margin-top: 3rem;
     color: #777;
     text-align: center;
+}
+
+.page__logo {
+    width: 112px;
+    height: 112px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex: 0 0 112px;
 }
 
 @media (max-width: 720px) {
@@ -137,4 +277,166 @@ select {
     .search__controls {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+#contacts-list {
+    list-style: decimal;
+    margin: 0;
+    padding: 0;
+}
+#contacts-list > li {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 1rem;
+    align-items: center;
+    padding: 0.52rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+
+#contacts-list .col {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.form__body .field input,
+.form__body .field textarea,
+.form__body .field select {
+
+    height: 44px;
+    min-height: 44px;
+    padding: 0 0.75rem;
+    font-size: 1rem;
+    line-height: 1;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+/*START new Buttons CSS*/
+
+
+.contact-card__photo{
+    width: 128px;
+    height: 128px;
+    border-radius: 20%;
+    object-fit: cover;
+    display: inline-flex;
+}
+
+.contact-card__info{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* full-screen overlay that takes over the page */
+.page-view {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    background: rgba(40, 40, 40, 0.98);
+    color: #fff;
+    overflow: auto;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/* close button */
+.page-view__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.page-view__nav {
+    margin-top: auto;             /* takes remaining space so nav sits at the bottom */
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 0.5rem;
+    position: relative;
+    z-index: 5;
+}
+
+.page-view__nav-btn {
+    background: linear-gradient(180deg, #53e06b 0%, #39d353 100%);
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;       
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 10px 24px rgba(57,211,83,0.18);
+    transition: transform 120ms ease, filter 120ms ease;
+}
+
+
+.page-view__counter {
+    color: #000000;
+    font-weight: 600;
+    text-align: center;
+    min-width: 60px;
+    min-height: 60px;
+    background-color: white;
+    box-shadow: 2px 2px 2px rgba(32, 139, 69, 0.45);
+    border: 1px ridge #000000;
+    border-radius:50%;
+    line-height: 60px
+}
+
+.page-view__photo {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px ridge #39d353;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+/* single contact card fills available viewport height */
+.page-view__card.single {
+    display: flex;
+    flex-direction: column;       
+    gap: 1.5rem;
+    align-items: center;
+    width: max(120px, 120px);
+    padding: 2rem;
+    border-radius: 12px;
+    background: rgba(221, 18, 18, 0.03);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    min-height: calc(60vh);
+    position: relative;
+}
+
+.page-view__card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 2rem;
+    min-height: calc(100vh - 4rem); /* full visible page per card */
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+}
+
+
+/* end new Buttons CSS */
+/*error message*/
+.field__error {
+    color: #ffb4b4;
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
 }
